@@ -24,6 +24,8 @@ $i -A INPUT -p tcp --dport 137  -j ACCEPT ##NETBIOS Allow
 $i -A INPUT -p tcp --dport 138  -j ACCEPT ##NETBIOS Allow
 $i -A INPUT -p tcp --dport 139  -j ACCEPT ##NETBIOS Allow
 $i -A INPUT -p tcp --dport 445  -j ACCEPT ##NETBIOS Allow
+$i -A INPUT -p tcp --dport 80  -j ACCEPT ##http Allow
+$i -A INPUT -p tcp --dport 443  -j ACCEPT ##https Allow
 $i -A INPUT -p tcp -s 192.168.0.0/24 --dport 22 -j DROP ##Restrict SSH
 $i -A INPUT -p tcp -m state --state NEW -m tcp --dport 22 -j ACCEPT
 $i -A INPUT -j REJECT --reject-with icmp-host-prohibited
